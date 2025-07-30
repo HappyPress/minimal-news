@@ -67,19 +67,119 @@ function minimal_news_register_patterns() {
         );
     }
 
-    // Include pattern files
-    $pattern_files = array(
-        'hero-grid',
-        'dark-carousel',
-        'ad-cta-block'
+    // Register patterns manually
+    register_block_pattern(
+        'minimal-news/hero-grid',
+        array(
+            'title' => __('Hero Grid', 'minimal-news'),
+            'categories' => array('minimal-news'),
+            'keywords' => array('hero', 'grid', 'featured', 'posts'),
+            'content' => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"3rem"}}}} -->
+<div class="wp-block-group alignwide" style="margin-bottom:3rem">
+    <!-- wp:columns {"style":{"spacing":{"blockGap":"2rem"}}} -->
+    <div class="wp-block-columns">
+        <!-- wp:column {"width":"60%"} -->
+        <div class="wp-block-column" style="flex-basis:60%">
+            <!-- wp:query {"queryId":8,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list","columns":3}} -->
+            <div class="wp-block-query">
+                <!-- wp:post-template -->
+                <!-- wp:post-featured-image {"isLink":true,"style":{"spacing":{"margin":{"bottom":"1rem"}}}} /-->
+                <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"2rem","fontWeight":"700"}}} /-->
+                <!-- wp:post-excerpt {"moreText":"Read More","style":{"spacing":{"margin":{"top":"1rem"}}}} /-->
+                <!-- /wp:post-template -->
+            </div>
+            <!-- /wp:query -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"40%"} -->
+        <div class="wp-block-column" style="flex-basis:40%">
+            <!-- wp:query {"queryId":9,"query":{"perPage":2,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list","columns":3}} -->
+            <div class="wp-block-query">
+                <!-- wp:post-template -->
+                <!-- wp:post-featured-image {"isLink":true,"style":{"spacing":{"margin":{"bottom":"0.5rem"}}}} /-->
+                <!-- wp:post-title {"isLink":true,"level":3,"style":{"typography":{"fontSize":"1.25rem","fontWeight":"600"}}} /-->
+                <!-- /wp:post-template -->
+            </div>
+            <!-- /wp:query -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->',
+        )
     );
 
-    foreach ($pattern_files as $pattern) {
-        $pattern_file = get_template_directory() . '/patterns/' . $pattern . '.php';
-        if (file_exists($pattern_file)) {
-            include $pattern_file;
-        }
-    }
+    register_block_pattern(
+        'minimal-news/dark-carousel',
+        array(
+            'title' => __('Dark Carousel', 'minimal-news'),
+            'categories' => array('minimal-news'),
+            'keywords' => array('carousel', 'dark', 'featured', 'video'),
+            'content' => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"3rem","padding":{"top":"2rem","bottom":"2rem"}}},"backgroundColor":"black"},"backgroundColor":"black","textColor":"white"} -->
+<div class="wp-block-group alignwide has-white-color has-black-background-color has-text-color has-background" style="margin-bottom:3rem;padding-top:2rem;padding-bottom:2rem">
+    <!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"2rem"}}}} -->
+    <h2 class="wp-block-heading" style="margin-bottom:2rem">Watch Next</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:query {"queryId":10,"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"grid","columns":4}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template -->
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"border":{"radius":"8px"}},"backgroundColor":"black","className":"video-card"} -->
+        <div class="wp-block-group has-black-background-color has-background video-card" style="border-radius:8px;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
+            <!-- wp:post-featured-image {"isLink":true,"style":{"spacing":{"margin":{"bottom":"1rem"}}}} /-->
+            <!-- wp:post-title {"isLink":true,"level":4,"style":{"typography":{"fontSize":"1rem","fontWeight":"600"}}} /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+</div>
+<!-- /wp:group -->',
+        )
+    );
+
+    register_block_pattern(
+        'minimal-news/ad-cta-block',
+        array(
+            'title' => __('Ad/CTA Block', 'minimal-news'),
+            'categories' => array('minimal-news'),
+            'keywords' => array('ad', 'cta', 'call-to-action', 'banner'),
+            'content' => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"3rem","padding":{"top":"2rem","bottom":"2rem"}}},"backgroundColor":"sunrise-orange"},"backgroundColor":"sunrise-orange","textColor":"white"} -->
+<div class="wp-block-group alignwide has-white-color has-sunrise-orange-background-color has-text-color has-background" style="margin-bottom:3rem;padding-top:2rem;padding-bottom:2rem">
+    <!-- wp:columns {"style":{"spacing":{"blockGap":"2rem"}}} -->
+    <div class="wp-block-columns">
+        <!-- wp:column {"width":"60%"} -->
+        <div class="wp-block-column" style="flex-basis:60%">
+            <!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"1rem"}}}} -->
+            <h2 class="wp-block-heading" style="margin-bottom:1rem">Stay Updated</h2>
+            <!-- /wp:heading -->
+            <!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"1.5rem"}}}} -->
+            <p style="margin-bottom:1.5rem">Get the latest news delivered to your inbox. Subscribe to our newsletter for exclusive content and breaking updates.</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+        
+        <!-- wp:column {"width":"40%"} -->
+        <div class="wp-block-column" style="flex-basis:40%">
+            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+            <div class="wp-block-buttons">
+                <!-- wp:button {"backgroundColor":"white","textColor":"sunrise-orange","style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"2rem","right":"2rem"}}}} -->
+                <div class="wp-block-button">
+                    <a class="wp-block-button__link has-sunrise-orange-color has-white-background-color has-text-color has-background wp-element-button" style="padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem">Subscribe Now</a>
+                </div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->',
+        )
+    );
 }
 add_action('init', 'minimal_news_register_patterns');
 
