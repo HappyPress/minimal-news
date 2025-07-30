@@ -11,7 +11,7 @@
 
         <!-- wp:buttons -->
         <div class="wp-block-buttons">
-            <!-- wp:button {"backgroundColor":"transparent","textColor":"white","style":{"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"1rem","right":"1rem"}},"border":{"width":"1px","color":"white"}},"borderColor":"white"} -->
+            <!-- wp:button {"backgroundColor":"transparent","textColor":"white","style":{"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"1rem","right":"1rem"}},"border":{"width":"1px"}},"borderColor":"white"} -->
             <div class="wp-block-button">
                 <a class="wp-block-button__link has-white-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" style="border-color:white;padding-top:0.25rem;padding-right:1rem;padding-bottom:0.25rem;padding-left:1rem">Sign In</a>
             </div>
@@ -34,7 +34,15 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}},"className":"main-navigation"} /-->
+        <!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}},"className":"main-navigation"} -->
+        <!-- wp:navigation-link {"label":"Home","url":"/"} /-->
+        <!-- wp:navigation-link {"label":"News","url":"/news"} /-->
+        <!-- wp:navigation-link {"label":"Sport","url":"/sport"} /-->
+        <!-- wp:navigation-link {"label":"Weather","url":"/weather"} /-->
+        <!-- wp:navigation-link {"label":"Culture","url":"/culture"} /-->
+        <!-- wp:navigation-link {"label":"Business","url":"/business"} /-->
+        <!-- wp:navigation-link {"label":"Technology","url":"/technology"} /-->
+        <!-- /wp:navigation -->
 
         <!-- wp:group {"layout":{"type":"flex","alignItems":"center","flexWrap":"wrap"}} -->
         <div class="wp-block-group">
@@ -242,7 +250,11 @@
             <!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"1rem"}}}} -->
             <h4 class="wp-block-heading" style="margin-bottom:1rem">News</h4>
             <!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0.5rem"}}} /-->
+            <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
+            <!-- wp:navigation-link {"label":"Latest News","url":"/news"} /-->
+            <!-- wp:navigation-link {"label":"Breaking News","url":"/breaking"} /-->
+            <!-- wp:navigation-link {"label":"World News","url":"/world"} /-->
+            <!-- /wp:navigation -->
         </div>
         <!-- /wp:column -->
 
@@ -260,7 +272,11 @@
             <!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"1rem"}}}} -->
             <h4 class="wp-block-heading" style="margin-bottom:1rem">About</h4>
             <!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0.5rem"}}} /-->
+            <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
+            <!-- wp:navigation-link {"label":"About Us","url":"/about"} /-->
+            <!-- wp:navigation-link {"label":"Contact","url":"/contact"} /-->
+            <!-- wp:navigation-link {"label":"Privacy Policy","url":"/privacy"} /-->
+            <!-- /wp:navigation -->
         </div>
         <!-- /wp:column -->
     </div>
